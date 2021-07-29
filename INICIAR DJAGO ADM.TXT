@@ -3,3 +3,11 @@
 #heroku config:set SECRET_KEY="*@agk0y0z100(_$y7=j@0zh$jh!q8l)7=s5yw=e1&t(rwqjwmz"
 
 #set DJANGO_SETTINGS_MODULE=base.settings
+
+#DEBUG = True
+#SECRET_KEY="*@agk0y0z100(_$y7=j@0zh$jh!q8l)7=s5yw=e1&t(rwqjwmz"
+#DJANGO_SETTINGS_MODULE=pypro.settings
+#ALLOWED_HOSTS=localhost,127.0.0.1
+#AWS_ACCESS_KEY_ID=AKIAVXU5ES2KPQPVRYDN
+#AWS_SECRET_ACCESS_KEY=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
+#DATABASE_URL = postgres://postgres:postgres@localhost/testdb
