@@ -16,8 +16,8 @@ import dj_database_url
 from functools import partial
 import os
 from pypro import base
-#import sentry_sdk
-#from sentry_sdk.integrations.django import DjangoIntegration
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'collectfast',
     'django.contrib.staticfiles',
     'pypro.base',
 ]
@@ -122,6 +123,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+
 #Configuração de ambiente de desenvolvimento
 
 STATIC_URL = '/static/'
@@ -129,6 +132,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 AWS_ACCESS_KEY_ID=config('AWS_ACCESS_KEY_ID')
+COLLECTFAST_ENABLED = False
 
 
 #STORAGE CONFIGURATION IN S3 AWS

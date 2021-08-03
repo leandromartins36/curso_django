@@ -13,6 +13,8 @@ python-decouple = "*"
 dj-database-url = "*"
 django-s3-folder-storage = "*"
 pytest = "*"
+collectfast = "*"
+sentry-sdk = "*"
 
 [dev-packages]
 flake8 = "*"
