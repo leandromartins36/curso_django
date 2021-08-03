@@ -15,6 +15,7 @@ from decouple import config, Csv
 import dj_database_url
 from functools import partial
 import os
+from pypro import base
 #import sentry_sdk
 #from sentry_sdk.integrations.django import DjangoIntegration
 
@@ -30,7 +31,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECRET_KEY = '*@agk0y0z100(_$y7=j@0zh$jh!q8l)7=s5yw=e1&t(rwqjwmz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = ['*']  # config('ALLOWED_HOSTS', cast=Csv())
 
@@ -128,8 +129,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 AWS_ACCESS_KEY_ID=config('AWS_ACCESS_KEY_ID')
-#STORAGE CONFIGURATION IN S3 AWS
 
+
+#STORAGE CONFIGURATION IN S3 AWS
 if AWS_ACCESS_KEY_ID:
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
@@ -138,10 +140,8 @@ if AWS_ACCESS_KEY_ID:
     AWS_AUTO_CREATE_BUCKET = False
     AWS_QUERYSTRING_AUTH = True
     AWS_S3_CUSTOM_DOMAIN = None
-
     COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
     COLLECTFAST_ENABLED = True
-
     AWS_DEFAULT_ACL = 'private'
 
     # Static Assets
