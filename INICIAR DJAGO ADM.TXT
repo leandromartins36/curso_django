@@ -3,6 +3,7 @@
 #heroku config:set SECRET_KEY="*@agk0y0z100(_$y7=j@0zh$jh!q8l)7=s5yw=e1&t(rwqjwmz"
 
 #set DJANGO_SETTINGS_MODULE=base.settings
+# export DJANGO_SETTINGS_MODULE=base.settings
 
 #DEBUG = True
 #SECRET_KEY="*@agk0y0z100(_$y7=j@0zh$jh!q8l)7=s5yw=e1&t(rwqjwmz"

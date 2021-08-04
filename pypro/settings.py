@@ -16,6 +16,7 @@ import dj_database_url
 from functools import partial
 import os
 from pypro import base
+from pypro.base import User
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
@@ -33,7 +34,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['*']  # config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+AUTH_USER_MODEL = 'base.User'
 
 # Application definition
 
@@ -46,6 +48,7 @@ INSTALLED_APPS = [
     'collectfast',
     'django.contrib.staticfiles',
     'pypro.base',
+
 ]
 
 MIDDLEWARE = [
