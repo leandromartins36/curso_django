@@ -15,6 +15,7 @@ django-s3-folder-storage = "*"
 pytest = "*"
 collectfast = "*"
 sentry-sdk = "*"
+heroku = "*"
 
 [dev-packages]
 flake8 = "*"

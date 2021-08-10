@@ -16,7 +16,7 @@ import dj_database_url
 from functools import partial
 import os
 from pypro import base
-from pypro.base import User
+
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
@@ -32,7 +32,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECRET_KEY = '*@agk0y0z100(_$y7=j@0zh$jh!q8l)7=s5yw=e1&t(rwqjwmz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+#DEBUG = config('DEBUG', cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 AUTH_USER_MODEL = 'base.User'

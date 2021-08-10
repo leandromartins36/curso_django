@@ -1,8 +1,10 @@
 language: python
+dist: min
+sudo : true
 
 
 python:
-  - 3.9
+  - 3.9.5
 
 services:
   postgresql
